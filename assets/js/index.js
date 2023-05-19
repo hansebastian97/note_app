@@ -16,7 +16,11 @@ $('#update_user').submit(function(event){
     var request = {
         'url': `http://localhost:3000/api/users/${data.id}`,
         'method': 'PUT',
-         'data': data
+        'data': data,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods':'OPTIONS, GET, POST, PUT',
+        'Access-Control-Allow-Headers': 'Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control'
     }
     $.ajax(request).done(function(response){
         alert('Data Updated Successfully!');
