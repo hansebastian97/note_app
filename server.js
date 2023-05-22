@@ -12,7 +12,11 @@ const app = express();
 dotenv.config({path:'config.env'});
 const PORT = process.env.PORT || 8080
 
-app.use(cors());
+app.use(cors({
+    "origin": "*",
+    "methods": "OPTIONS, GET, POST, PUT",
+    "credentials":'true'
+}));
 
 //log requests
 app.use(morgan('tiny'));
