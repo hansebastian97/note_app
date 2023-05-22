@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 8080
 
 app.use(cors({
     "origin": "*",
-    "methods": "OPTIONS, GET, POST, PUT",
-    "credentials":'true'
+    "methods": "*"
 }));
 
 //log requests
